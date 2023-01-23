@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Key Detection</title>
+  <script type="text/javascript" src="https://www.cornify.com/js/cornify.js"></script>
+  <style>
+  h1{
+    text-align: center;
+    color: #000;
+    font-size: 100px;
+    font-weight: 200;
+  }
+
+  span{
+    font-weight: bold;
+  }
+
+  .none{
+    display: none;
+  }
+  </style>
+</head>
+<body>
+  <h1 style="text-align:center">type <span>harsh</span> to see magic</h1>
+<script>
+  const htag = document.querySelector('h1')
+  const pressed = []
+  const secretCode = 'harsh'
+
+  window.addEventListener('keyup',(e)=>{
+    if(e.key){
+      
+    }
+    pressed.push(e.key)
+    pressed.splice(-secretCode.length - 1,pressed.length - secretCode.length)
+
+
+    if(pressed.join('').includes(secretCode)){
+    htag.classList.add('none')
+    console.log('MATCH HAS BEEN FOUND!')
+    cornify_add()
+
+  }
+  console.log(pressed)
+
+      })
+  </script>
+</body>
+</html>
